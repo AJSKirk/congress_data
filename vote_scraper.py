@@ -51,6 +51,7 @@ df = pd.DataFrame(data)
 header = df.iloc[0]
 df = df[1:]
 df.columns = header
+df = df[df['candidate'] != 'Everett Corley']
 df['votes'] = df['votes'].astype('int')
 
 df.to_csv('2016_congressional_votes.csv', index=False)
